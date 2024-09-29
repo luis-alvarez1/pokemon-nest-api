@@ -27,6 +27,7 @@ pipeline {
         }
 
         stage('Package') {
+			
             steps {
                 sh 'zip -r target/poke-app.zip dist'
             }
