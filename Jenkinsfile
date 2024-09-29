@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        AZURE_CREDENTIALS = credentials('azure-service-principal')
+        AZURE_CREDENTIALS = credentials('ba65f07a-6809-4133-9a8e-516b720ae4ae')
         RESOURCE_GROUP = 'rg-pokemon-demo'
         APP_NAME = 'pokemon-api-demo'
     }
@@ -35,7 +35,7 @@ pipeline {
         stage('Deploy to Azure') {
             steps {
                 withCredentials([azureServicePrincipal(
-                    credentialsId: 'azure-service-principal',
+                    credentialsId: 'ba65f07a-6809-4133-9a8e-516b720ae4ae',
                     subscriptionIdVariable: 'AZURE_SUBSCRIPTION_ID',
                     clientIdVariable: 'AZURE_CLIENT_ID',
                     clientSecretVariable: 'AZURE_CLIENT_SECRET',
